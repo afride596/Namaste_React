@@ -1,0 +1,26 @@
+{
+  "name": "reactjs",
+  "version": "1.0.0",
+  "description": "Namaste React with Mohammad Afride",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/afride596/Namaste_React.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Mohammad Afride",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/afride596/Namaste_React/issues"
+  },
+  "homepage": "https://github.com/afride596/Namaste_React#readme",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
+}
