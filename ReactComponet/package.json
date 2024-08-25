@@ -21,6 +21,8 @@
   },
   "homepage": "https://github.com/afride596/Namaste_React#readme",
   "devDependencies": {
+    "@types/react": "^18.3.4",
+    "@types/react-dom": "^18.3.0",
     "parcel": "^2.12.0"
   },
   "dependencies": {
