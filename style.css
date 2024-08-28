@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+body {
+  overflow-x: hidden;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.header {
+  position: sticky;
+  display: flex;
+  border: 1px solid #e3e1e1;
+  width: 100%;
+  height: 70px;
+  justify-content: space-between;
+  box-shadow: 1px 1px 10px rgb(172, 166, 166);
+}
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 16%;
+  cursor: pointer;
+}
+.logoContainer > img {
+  width: 30%;
+  background-size: contain;
+  justify-content: center;
+  align-items: center;
+}
+.navContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid red; */
+  padding: 2px 200px;
+}
+
+.navContainer > ul {
+  /* border: 1px solid rgb(9, 27, 230); */
+
+  display: flex;
+  list-style: none;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  /* display: flex; */
+}
+.navContainer > ul > li {
+  /* border: 1px solid rgb(2, 0, 0); */
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "poppins";
+  font-weight: 500;
+  font-size: 15px;
+  color: #7e7c7c;
+}
+.navContainer > ul > li:hover {
+  /* background-color: aqua; */
+  color: #000000;
+  cursor: pointer;
+}
+
+.SearchComponent {
+  position: relative;
+  top: 28px;
+  margin-bottom: 55px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  box-shadow: 1px 1px 20px #dbdada;
+  border-radius: 5px;
+}
+.search .input {
+  font-family: "poppins";
+  padding: 13px;
+  text-decoration: none;
+  font-size: 15px;
+  width: 450px;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  outline: none;
+  border: none;
+}
+
+.search button {
+  font-family: "poppins";
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  cursor: pointer;
+  background-color: #000000de;
+  color: #ffffffd6;
+  border: none;
+  padding: 15px;
+}
+.search button:hover {
+  background-color: #061515;
+}
+
+.RestaurantCard-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  /* top: 67px; */
+
+  width: 100%;
+  margin: auto;
+}
+.RestaurantCard {
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  gap: 19px;
+  align-items: center;
+  justify-content: center;
+  width: 290px;
+  height: 350px;
+  /* flex-wrap: wrap; */
+  /* height: 380px; */
+  border: 1px solid #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 1px 1px 20px #d6d3d3;
+  background-size: contain;
+  flex-direction: column;
+}
+.RestaurantCard:hover {
+  box-shadow: 1px 1px 40px #e0d4d4;
+}
+.img-container {
+  /* width: 50px; */
+}
+.RestaurantCard img {
+  box-sizing: border-box;
+  border-radius: 5px;
+  height: 205px;
+  width: 270px;
+  object-fit: cover;
+
+  box-shadow: 1px 1px 25px #cfcfcf;
+}
+.rescard-information {
+  display: flex;
+  flex-direction: column;
+  gap: 5;
+  width: 80%;
+}
+.rescard-information h1 {
+  width: 100%;
+  font-size: 16px;
+}
+.starrating {
+  display: flex;
+  gap: 21px;
+}
+.cusines small {
+  width: 25px;
+}
+/* footer */
+.footer {
+  cursor: pointer;
+  background-color: #ffffff;
+  color: #000000de;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  bottom: -21px;
+  width: 100%;
+  border: 1px solid rgb(238, 237, 237);
+  box-shadow: 1px 1px 25px #ffffff;
+  height: 45px;
+}
+.footer h1 {
+  font-size: 15px;
+}
+.footer small {
+  font-size: 15px;
+}
