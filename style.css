@@ -13,7 +13,8 @@ body {
   border: 1px solid #e3e1e1;
   width: 100%;
   height: 70px;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  align-items: center;
   box-shadow: 1px 1px 10px rgb(172, 166, 166);
 }
 .logoContainer {
@@ -31,10 +32,10 @@ body {
 }
 .navContainer {
   display: flex;
+  justify-content: space-evenly;
   align-items: center;
-  justify-content: center;
   /* border: 1px solid red; */
-  padding: 2px 200px;
+  /* padding: 2px 0px; */
 }
 
 .navContainer > ul {
@@ -63,7 +64,21 @@ body {
   color: #000000;
   cursor: pointer;
 }
-
+.logbtn {
+  border: none;
+  cursor: pointer;
+  border: 1px solid rgb(235, 232, 232);
+  width: 90px;
+  height: 39px;
+  background-color: #a9ab9ede;
+  font-size: 17px;
+  font-weight: 600;
+  border-radius: 5px;
+  box-shadow: 1px 1px 25px rgb(245, 244, 244);
+}
+.logbtn:hover {
+  color: #ffffffd6;
+}
 .filterBtn {
   position: relative;
   display: flex;
@@ -141,21 +156,20 @@ body {
   gap: 50px;
   align-items: center;
   justify-content: center;
-  position: relative;
-  /* top: 67px; */
 
   width: 100%;
   margin: auto;
+  margin-bottom: 100px;
 }
 .RestaurantCard {
   box-sizing: border-box;
   cursor: pointer;
   display: flex;
-  gap: 19px;
+  gap: 2px;
   align-items: center;
   justify-content: center;
-  width: 290px;
-  height: 350px;
+  width: 250px;
+  height: 340px;
   /* flex-wrap: wrap; */
   /* height: 380px; */
   border: 1px solid #f7f7f7;
@@ -175,7 +189,7 @@ body {
   box-sizing: border-box;
   border-radius: 5px;
   height: 205px;
-  width: 270px;
+  width: 230px;
   object-fit: cover;
 
   box-shadow: 1px 1px 25px #cfcfcf;
@@ -183,19 +197,30 @@ body {
 .rescard-information {
   display: flex;
   flex-direction: column;
-  gap: 5;
-  width: 80%;
+  gap: 1;
+  width: 100%;
+  margin-left: 25px;
 }
 .rescard-information h1 {
-  width: 100%;
+  width: 280px;
+  word-wrap: break-word;
   font-size: 16px;
 }
 .starrating {
   display: flex;
   gap: 21px;
 }
+.cusines {
+  width: 200px;
+  word-wrap: break-word;
+  overflow: hidden;
+  /* word-break:break-all; */
+}
 .cusines small {
-  width: 25px;
+  /* word-break: break-all;
+  white-space: pre-wrap; */
+  height: 2px;
+  /* width: 20px; */
 }
 /* footer */
 .footer {
@@ -206,9 +231,9 @@ body {
   gap: 10px;
   justify-content: center;
   align-items: center;
-  position: relative;
-
-  bottom: -21px;
+  position: fixed;
+  margin-top: 50px;
+  bottom: 0px;
   width: 100%;
   border: 1px solid rgb(238, 237, 237);
   box-shadow: 1px 1px 25px #ffffff;
