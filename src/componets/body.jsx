@@ -1,6 +1,7 @@
 import reslists from "../utils/mockData";
 import { useState, useEffect } from "react";
 import RestaurantCard from "./RestaurantCard";
+import { Link } from "react-router-dom";
 
 let Body = () => {
   const [listofRes, setlistoFRes] = useState([]);
@@ -17,22 +18,41 @@ let Body = () => {
     );
 
     const jsonData = await data.json();
-    console.log(jsonData);
-
-    setlistoFRes(
+    // console.log(jsonData);
+    const restaurants1 =
       jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants
-    );
-    setfilterlist(
-      jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle
-        ?.restaurants
-    );
+        ?.restaurants;
+    const restaurants2 =
+      jsonData?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants;
+    const restaurants3 =
+      jsonData?.data?.cards[3]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants;
+    const restaurants4 =
+      jsonData?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants;
+    const restaurants5 =
+      jsonData?.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants;
+    const restaurants6 =
+      jsonData?.data?.cards[6]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants;
+    const combinedRestaurents = [
+      ...(restaurants1 || []),
+      ...(restaurants2 || []),
+      ...(restaurants3 || []),
+      ...(restaurants4 || []),
+      ...(restaurants5 || []),
+      ...(restaurants6 || []),
+    ];
+    setlistoFRes(combinedRestaurents);
+    setfilterlist(combinedRestaurents);
     // setfilterlist(
     //   jsonData?.data?.success?.cards[3]?.gridWidget?.gridElements?.infoWithStyle?.restaurants
     // );
     // setlistoFRes(
     //   jsonData?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle
-    //     ?.restaurants
+    // ?.restaurants
     // );
   };
 
@@ -44,7 +64,7 @@ let Body = () => {
           className="filterBtn active"
           onClick={() => {
             const filterRes = listofRes.filter((res) => {
-              return res?.info?.avgRatingString > 4;
+              return res?.info?.avgRatingString > 4.3;
             });
             // setlistoFRes(filterRes);
             setfilterlist(filterRes);
@@ -85,7 +105,11 @@ let Body = () => {
       <div className="RestaurantCard-container">
         {filterlist.map((restaurant) => {
           return (
-            <RestaurantCard key={restaurant.info.id} resData={restaurant} />
+            <Link key={restaurant.info.id} to={"/restaurants/" + restaurant.info.id}>
+              
+              <RestaurantCard  resData={restaurant} />
+            </Link>
+            
           );
         })}
       </div>
