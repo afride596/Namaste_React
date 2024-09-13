@@ -1,21 +1,11 @@
-import { useState, useEffect } from "react";
+
 import { useParams } from "react-router-dom";
-import { MENU_API } from "../utils/constants";
+import useRestaurantsMenu from "../utils/useRestaurantsMenu";
 
 const RestaurantsMenu = () => {
-  const [resInfo, setResInfo] = useState(null);
   const { resId } = useParams();
 
-  useEffect(() => {
-    fetchMenu();
-  }, []);
-
-  const fetchMenu = async () => {
-    const data = await fetch(MENU_API + resId);
-
-    const daata = await data.json();
-    setResInfo(daata.data);
-  };
+  const resInfo = useRestaurantsMenu(resId);
 
   if (resInfo === null) return <div>Loading...</div>;
 
@@ -25,6 +15,7 @@ const RestaurantsMenu = () => {
   let { name, cuisines, costForTwoMessage } =
     resInfo?.cards[2]?.card?.card?.info;
   console.log(name);
+
   let { itemCards: itemCards1 } =
     resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
   let { itemCards: itemCards2 } =
@@ -37,10 +28,10 @@ const RestaurantsMenu = () => {
     resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[5]?.card?.card;
   let { itemCards: itemCards6 } =
     resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[6]?.card?.card;
-  let { itemCards: itemCards7 } =
-    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[7]?.card?.card;
-  let { itemCards: itemCards8 } =
-    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[8]?.card?.card;
+  // let { itemCards: itemCards7 } =
+  //   resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[7]?.card?.card;
+  // let { itemCards: itemCards8 } =
+  //   resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[8]?.card?.card;
 
   const allItemCards = [
     ...(itemCards1 || []),
@@ -49,12 +40,10 @@ const RestaurantsMenu = () => {
     ...(itemCards4 || []),
     ...(itemCards5 || []),
     ...(itemCards6 || []),
-    ...(itemCards7 || []),
-    ...(itemCards8 || []),
+    // ...(itemCards7 || []),
+    // ...(itemCards8 || []),
   ];
-  console.log(allItemCards);
 
-  console.log(resInfo);
   return (
     <div className="Menu">
       <h1>{name}</h1>
@@ -65,8 +54,11 @@ const RestaurantsMenu = () => {
       <ul>
         {allItemCards.map((item) => (
           <li key={item?.card?.info?.id}>
-            {item?.card?.info?.name}-{"Rs."}
-            {(item?.card?.info?.price / 100).toFixed(0)}
+            {item?.card?.info?.name} - {"Rs."}
+            {(
+              item?.card?.info?.defaultPrice / 100 ||
+              item?.card?.info?.price / 100
+            ).toFixed(0)}
           </li>
         ))}
       </ul>

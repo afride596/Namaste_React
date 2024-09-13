@@ -2,6 +2,7 @@ import reslists from "../utils/mockData";
 import { useState, useEffect } from "react";
 import RestaurantCard from "./RestaurantCard";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 let Body = () => {
   const [listofRes, setlistoFRes] = useState([]);
@@ -37,6 +38,9 @@ let Body = () => {
     const restaurants6 =
       jsonData?.data?.cards[6]?.card?.card?.gridElements?.infoWithStyle
         ?.restaurants;
+    const restaurants7 =
+      jsonData?.data?.cards[7]?.card?.card?.gridElements?.infoWithStyle
+        ?.restaurants;
     const combinedRestaurents = [
       ...(restaurants1 || []),
       ...(restaurants2 || []),
@@ -44,6 +48,7 @@ let Body = () => {
       ...(restaurants4 || []),
       ...(restaurants5 || []),
       ...(restaurants6 || []),
+      ...(restaurants7 || []),
     ];
     setlistoFRes(combinedRestaurents);
     setfilterlist(combinedRestaurents);
@@ -55,7 +60,14 @@ let Body = () => {
     // ?.restaurants
     // );
   };
-
+const OnlineStatus=useOnlineStatus();
+if(OnlineStatus===false){
+  return(
+    <div>
+      <h1>Sorry, you are offline</h1>
+    </div>
+  );
+}
   return (
     <div className="body">
       <div className="button-container">
@@ -105,11 +117,12 @@ let Body = () => {
       <div className="RestaurantCard-container">
         {filterlist.map((restaurant) => {
           return (
-            <Link key={restaurant.info.id} to={"/restaurants/" + restaurant.info.id}>
-              
-              <RestaurantCard  resData={restaurant} />
+            <Link
+              key={restaurant.info.id}
+              to={"/restaurants/" + restaurant.info.id}
+            >
+              <RestaurantCard resData={restaurant} />
             </Link>
-            
           );
         })}
       </div>
