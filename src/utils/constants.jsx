@@ -5,3 +5,4 @@ export const LOGO_URL =
   "https://cdn.logojoy.com/wp-content/uploads/2018/05/01105934/1855-768x591.png";
 export const MENU_API =
   "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=16.5061743&lng=80.6480153&restaurantId=";
+ 

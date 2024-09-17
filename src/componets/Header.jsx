@@ -6,12 +6,12 @@ const Header = () => {
   let [btName, setbtName] = useState("Login");
   const onlineStatus=useOnlineStatus()
   return (
-    <div className="header">
-      <div className="logoContainer">
+    <div className="header flex border-solid border-[#ffffff] border-[2px] justify-around align-middle items-center shadow-md h-20 ">
+      <div className="logoContainer w-24">
         <img src={LOGO_URL} alt="" />
       </div>
-      <div className="navContainer">
-        <ul>
+      <div className="navContainer flex ">
+        <ul className="flex gap-6">
           <li>OnlineStatus:{onlineStatus?"✅":"🔴"}</li>
           <li className="active"><Link to="/">Home </Link></li>
           <li> <Link to="/about">About Us</Link></li>
@@ -21,7 +21,7 @@ const Header = () => {
         </ul>
       </div>
       <button
-        className="logbtn"
+        className="logbtn border-solid border-red-50 border-2  py- h-7 w-20 rounded-md shadow-md"
         onClick={() => {
           btName === "login" ? setbtName("logout") : setbtName("login");
         }}
