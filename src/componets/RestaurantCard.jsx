@@ -1,4 +1,6 @@
+import { useContext } from "react";
 import { CDN_URL } from "../utils/constants";
+import usercontext from "../utils/usercontext";
 
 const RestaurantCard = ({ resData }) => {
   const {
@@ -9,6 +11,7 @@ const RestaurantCard = ({ resData }) => {
     areaName,
     cloudinaryImageId,
   } = resData?.info;
+  const { loginUserName } = useContext(usercontext);
   // console.log(resData);
   if (resData === null) {
     return <div>Loading...</div>;
@@ -44,6 +47,7 @@ const RestaurantCard = ({ resData }) => {
         <div className="reslocation font-medium font-extrabold">
           <small>{areaName}</small>
         </div>
+        <div>user:{loginUserName}</div>
       </div>
     </div>
   );

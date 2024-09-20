@@ -9,7 +9,7 @@ const ItemList = ({ Data }) => {
         
          
 
-          <div className="flex  text-left p-4   my-7  justify-between items-center border-b-[1px]  border-gray-200">
+          <div className="flex  w-[100%] text-left p-4   my-7  justify-between items-center border-b-[1px]  border-gray-200">
             <div className="flex flex-col  w-11/12  ">
               <span className="font-bold mb-2">{e?.card?.info?.name}</span>
               <span className="font-medium">

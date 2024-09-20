@@ -9,11 +9,14 @@ const RestaurantCatergory = ({ Data, showitem, setshowindex }) => {
     setLocalHideItem(!localHideItem);
     setshowindex();
   };
+  useEffect(()=>{
+    handleClick()
+  },[])
 
   return (
     <div>
       {/*herder */}
-      <div className="w-[50%] mx-auto border-b-[2px] p-4 text-lg bg-[#ffffff] f items-center my-16 shadow-lg cursor-pointer rounded-lg">
+      <div className="w-[45%] overflow-hidden mx-auto border-b-[2px] p-4 text-lg bg-[#ffffff] f items-center my-16 shadow-lg cursor-pointer rounded-lg">
         <div className="flex justify-between tra" onClick={handleClick}>
           <span className="font-bold text-lg ">
             {Data.title} ({Data.itemCards.length})
