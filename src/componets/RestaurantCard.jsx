@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { CDN_URL } from "../utils/constants";
 import usercontext from "../utils/usercontext";
-
 const RestaurantCard = ({ resData }) => {
   const {
     name,
@@ -13,10 +12,8 @@ const RestaurantCard = ({ resData }) => {
   } = resData?.info;
   const { loginUserName } = useContext(usercontext);
   // console.log(resData);
-  if (resData === null) {
-    return <div>Loading...</div>;
-  }
-  return (
+
+  return  (
     <div className="RestaurantCard w-[250px] border-solid border-2 border-White rounded-[10px]   h-[340px]  shadow-lg flex flex-col gap-3">
       <div className="flex justify-center items-center">
         <img
@@ -47,7 +44,7 @@ const RestaurantCard = ({ resData }) => {
         <div className="reslocation font-medium font-extrabold">
           <small>{areaName}</small>
         </div>
-        <div>user:{loginUserName}</div>
+        {/* <div>user:{loginUserName}</div> */}
       </div>
     </div>
   );

@@ -1,8 +1,9 @@
-import reslists from "../utils/mockData";
+
 import { useState, useEffect } from "react";
-import RestaurantCard from "./RestaurantCard";
-import { Link } from "react-router-dom";
+
 import useOnlineStatus from "../utils/useOnlineStatus";
+
+import RestaurantContainer from "./RestaurantContainer";
 
 let Body = () => {
   const [listofRes, setlistoFRes] = useState([]);
@@ -52,7 +53,9 @@ let Body = () => {
       </div>
     );
   }
-  return (
+  //conditional rendering
+
+  return  (
     <div className="">
       <div className="flex justify-center items-center mt-10 mb-10">
         <div className="SearchComponent   flex justify-center items-center    relative ">
@@ -101,7 +104,13 @@ let Body = () => {
         </div>
       </div>
 
-      <div className="RestaurantCard-container relative  flex flex-wrap gap-6  justify-center items-center  m-2 pb-28  ">
+ 
+      <div>
+      <RestaurantContainer filterlist={filterlist} listofRes={listofRes} />
+    </div>
+ 
+
+      {/* <div className="RestaurantCard-container relative  flex flex-wrap gap-6  justify-center items-center  m-2 pb-28  ">
         {filterlist.map((restaurant) => {
           return (
             <Link
@@ -112,7 +121,7 @@ let Body = () => {
             </Link>
           );
         })}
-      </div>
+      </div> */}
     </div>
   );
 };

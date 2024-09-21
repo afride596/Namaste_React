@@ -7,29 +7,35 @@ import Error from "./componets/Error";
 import { Contact } from "./componets/Contact";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import RestaurantsMenu from "./componets/RestaurantsMenu";
+import RestaurantContainer from "./componets/RestaurantContainer";
 import usercontext from "./utils/usercontext";
+import Shimmer from "./utils/Shimmer";
+import { Provider } from "react-redux";
+import appstore from "./utils/appstore";
+import Cart from "./componets/Cart";
 
 const Grocery = lazy(() => import("./componets/Grocery"));
 const About = lazy(() => import("./componets/about"));
 const AppLayout = () => {
-  const [userName,setuserName]=useState();
-useEffect(()=>{
-  const data={
-    name:"Athik",
-  }
-  setuserName(data.name)
-})
+  const [userName, setuserName] = useState();
+  useEffect(() => {
+    const data = {
+      name: "Athik",
+    };
+    setuserName(data.name);
+  });
   return (
-    
-    <div className="App overflow-hidden  w-[100%]">
-      <usercontext.Provider value={{loginUserName:userName}}>
-      <Header />
-    </usercontext.Provider>
-    <usercontext.Provider value={{loginUserName:"atul"}}>
-      <Outlet />
-      </usercontext.Provider>
-      <Footer />
-    </div>
+    <Provider store={appstore}>
+      <div className="App overflow-hidden  w-[100%]">
+        <usercontext.Provider value={{ loginUserName: userName }}>
+          <Header />
+        </usercontext.Provider>
+        <usercontext.Provider value={{ loginUserName: "atul" }}>
+          <Outlet />
+        </usercontext.Provider>
+        <Footer />
+      </div>
+    </Provider>
   );
 };
 
@@ -43,6 +49,10 @@ const appRouter = createBrowserRouter([
         element: <Body />,
       },
       {
+        path: "/cart",
+        element: <Cart />,
+      },
+      {
         path: "/about",
         element: (
           <Suspense fallback={<h1>loading....</h1>}>
@@ -53,6 +63,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact />,
+      },
+      {
+        path: "/shimmer",
+        element: <Shimmer />,
       },
       {
         path: "/grocery",

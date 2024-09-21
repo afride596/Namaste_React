@@ -33,7 +33,7 @@ const RestaurantsMenu = () => {
         );
       }
     );
-  console.log(itemCategory);
+  // console.log(itemCategory);
 
   return (
     <div className="text-center my-10">
