@@ -15,7 +15,7 @@ import appstore from "./utils/appstore";
 import Cart from "./componets/Cart";
 
 const Grocery = lazy(() => import("./componets/Grocery"));
-const About = lazy(() => import("./componets/about"));
+const About = lazy(() => import("./componets/About"));
 const AppLayout = () => {
   const [userName, setuserName] = useState();
   useEffect(() => {
@@ -26,7 +26,7 @@ const AppLayout = () => {
   });
   return (
     <Provider store={appstore}>
-      <div className="App overflow-hidden  w-[100%]">
+      <div className="App   w-[100%]">
         <usercontext.Provider value={{ loginUserName: userName }}>
           <Header />
         </usercontext.Provider>

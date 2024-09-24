@@ -2,10 +2,10 @@
   "name": "reactjs",
   "version": "1.0.0",
   "description": "Namaste React with Mohammad Afride",
-  "main": "./index.js",
   "scripts": {
     "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "build": "parcel build index.html",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -21,8 +21,15 @@
   },
   "homepage": "https://github.com/afride596/Namaste_React#readme",
   "devDependencies": {
+    "@babel/core": "^7.25.2",
+    "@babel/preset-env": "^7.25.4",
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/react": "^16.0.1",
     "@types/react": "^18.3.8",
     "@types/react-dom": "^18.3.0",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
     "parcel": "^2.12.0",
     "postcss": "^8.4.47",
     "process": "^0.11.10",
@@ -38,7 +45,7 @@
     "serve-static": "^1.16.2",
     "tailwind": "^4.0.0"
   },
-  "browsersList":[
+  "browsersList": [
     "last 2 versions"
   ]
 }

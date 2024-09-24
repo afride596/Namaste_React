@@ -19,7 +19,9 @@ let Body = () => {
       //  " https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.406498&lng=78.47724389999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
       // "https://www.swiggy.com/dapi/restaurants/list/v5?lat=16.5061743&lng=80.6480153&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
 
+      // "https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.0759837&lng=72.8776559&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
       "https://www.swiggy.com/dapi/restaurants/list/v5?lat=19.0759837&lng=72.8776559&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+
     );
 
     const jsonData = await data.json();
@@ -57,12 +59,12 @@ let Body = () => {
 
   return  (
     <div className="">
-      <div className="flex justify-center items-center mt-10 mb-10">
+      <div className="flex justify-center items-center mt-10 mb-10 pl-10 sm:pl-48">
         <div className="SearchComponent   flex justify-center items-center    relative ">
           <div className="search rounded-l-[5px] shadow-2xl   flex justify-center items-center">
             <input
               type="text"
-              className="p-[15px] text-black bg-white rounded-l-md w-[450px] outline-none border-none "
+              className="p-[15px] text-black bg-white rounded-l-md w-[350px] sm:w-[450px] outline-none border-none "
               value={inputvalue}
               placeholder="Search a restaurant you want...."
               onChange={(e) => {
