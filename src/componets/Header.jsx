@@ -18,17 +18,17 @@ const Header = () => {
 
   return (
     <div className="sticky  z-[1] top-0 bg-white ">
-      <div className=" flex border-solid border-[#ffffff]  border-[2px] justify-around  align-middle items-center shadow-md h-20 ">
-        <div className="logoContainer w-24 sm:w-32">
+      <div className=" flex border-solid border-[#ffffff]  border-[2px] justify-around  align-middle items-center shadow-md h-20 w-[100%]">
+        <div className="logoContainer w-12 sm:w-20 md:w-24 lg:w-28">
           <img src={logo}alt="" />
         </div>
         <div className="navContainer flex ">
-          <ul className="flex gap-2 sm:gap-6">
+          <ul className="flex gap-[3] sm:gap- text-center text-xs sm:text-base md:gap-4 md:text-lg justify-center items-center">
             {/* <li>OnlineStatus:{onlineStatus?"✅":"🔴"}</li> */}
-            <li className="active font-medium hover:text-gray-500">
+            <li className="active  font-medium hover:text-gray-500">
               <Link to="/">Home </Link>
             </li>
-            <li className="font-medium hover:text-gray-500">
+            <li className="font-medium  hover:text-gray-500">
 
               <Link to="/about">About Us</Link>
             </li>
@@ -41,10 +41,10 @@ const Header = () => {
               <Link to="/grocery">grocery</Link>
             </li>
 
-            <div className="w-8 flex relative cursor-pointer">
+            <div className="w-7 flex relative cursor-pointer">
               <Link to="/cart">
                 <img src={image} alt="cartLOGO" />
-                <li className="absolute left-[12px] font-semibold text-[13px] top-[10px]">
+                <li className="absolute sm:top-[6px] left-[11px] font-semibold text-[13px] md:top-[4px] top-[10px] lg:top-[3px] lg:left-[10px] ">
                   {cartitems.length}
                 </li>
               </Link>
@@ -54,7 +54,7 @@ const Header = () => {
 
         {/* <div className="font-bold text-lg;">{loginUserName}</div> */}
       <button
-          className="border-solid font-semibold bg-black text-white   h-8 w-20 rounded-md shadow-md"
+          className="border-solid font-semibold bg-black text-white   h-8 w-16 rounded-md md:w-24 shadow-md"
           onClick={() => {
             btName === "login" ? setbtName("logout") : setbtName("login");
           }}
