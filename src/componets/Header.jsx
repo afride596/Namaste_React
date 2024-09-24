@@ -38,7 +38,7 @@ const Header = () => {
             </li>
             <li className="font-medium hover:text-gray-500">
           
-              <Link to="/grocery">grocery</Link>
+              <Link to="/grocery">Grocery</Link>
             </li>
 
             <div className="w-7 flex relative cursor-pointer">
